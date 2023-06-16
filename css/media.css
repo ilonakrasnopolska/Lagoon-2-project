@@ -1,6 +1,6 @@
 @media (max-width: 1200px) {
   body {
-    overflow-x:hidden
+    overflow-x: hidden
   }
 
   .header__contact-link {
@@ -15,46 +15,47 @@
     padding-right: 30px;
     margin-bottom: 10px;
   }
-  
- .placement__wrapper {
-  padding: 0 5px;
- }
 
- .aside__container {
-  padding-left: 15px;
- }
- .services__container {
-  padding: 0 15px;
- }
+  .placement__wrapper {
+    padding: 0 5px;
+  }
 
- .list__item-services {
-  width: 48%;
-  padding-top: 14%;
-}
+  .aside__container {
+    padding-left: 15px;
+  }
 
- .list__descr-services {
-  padding: 25px;
-}
+  .services__container {
+    padding: 0 15px;
+  }
 
- .benefits__container {
-  padding: 0 15px;
- }
+  .list__item-services {
+    width: 48%;
+    padding-top: 14%;
+  }
+
+  .list__descr-services {
+    padding: 25px;
+  }
+
+  .benefits__container {
+    padding: 0 15px;
+  }
 
   .list__item-benefits {
     width: 24%;
   }
 
- .hotels__container {
-  padding: 0 15px;
- }
+  .hotels__container {
+    padding: 0 15px;
+  }
 
   .list__item-hotels {
     width: 32%;
   }
 
- .footer__container {
-  border-radius: 0;
- }
+  .footer__container {
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -74,22 +75,21 @@
   .place__article {
     width: 520px;
   }
-   
+
   .list__descr-services {
     padding: 25px;
   }
-
 
   .list__item-hotels {
     width: 310px;
     padding: 180px 40px 0 25px;
   }
- 
+
   .hotels-img8 {
     padding-top: 355px;
     padding: 390px 5px 0 5px;
   }
-  
+
   .form__container {
     padding-right: 0;
   }
@@ -112,14 +112,13 @@
   .list__descr-services {
     padding: 25px;
   }
-
 }
 
 @media (max-width: 1050px) {
   .placement__wrapper {
     padding: 0;
   }
-  
+
   .list__descr-services {
     padding: 25px;
   }
@@ -128,7 +127,11 @@
     padding: 20px;
   }
 
-  .list__item-select-city ,.list__item-select-country ,.list__item-date ,.list__item-nights ,.list__item-num {
+  .list__item-select-city,
+  .list__item-select-country,
+  .list__item-date,
+  .list__item-nights,
+  .list__item-num {
     margin-right: 3px;
   }
 
@@ -143,12 +146,12 @@
   .footer__left {
     margin-right: 15px;
   }
- 
+
   .list__item-benefits {
     width: 48%;
   }
 }
- 
+
 @media (max-width: 992px) {
   .header__btn {
     padding: 12px 5px;
@@ -158,13 +161,6 @@
     margin-right: 50px;
   }
 
-  .placement__wrapper {
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
   .place__article {
     width: 650px;
   }
@@ -172,7 +168,14 @@
   .place__article-big {
     width: 650px;
   }
-  
+
+  .placement__wrapper {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .services__list {
     padding: 0 10px;
   }
@@ -216,7 +219,7 @@
   .list__text-services {
     line-height: normal;
   }
-  
+
   .list__txt-services {
     margin: 0;
     font-size: medium;
@@ -226,12 +229,12 @@
 
   .list__item-hotels {
     width: 31%;
-    padding-top: 155px;
+    padding-top: 175px;
     padding-bottom: 30px;
   }
 
   .form__list {
-    width: 50%;
+    width: 100%;
     align-items: center;
   }
 
@@ -239,12 +242,8 @@
     padding-left: 9%;
   }
 
-  .form__container {
-    padding-left: 35%;
-  }
-
   .list__container-form {
-    flex-direction: column;
+    flex-direction: initial;
     align-items: center;
   }
 
@@ -302,42 +301,36 @@
 }
 
 @media (max-width: 790px) {
-  .nav__header-list {
-    display: none;
-  }
-
   .burger {
-    width: 40px;
-    height: 40px;
-    position: relative;
     display: block;
-    border: 1px solid currentColor;
-    border-radius: 3px;
-    right: 34%;
-    color:#CC9933;
   }
 
-  .burger__line {
-    width: 20px;
-    height: 2px;
-    border-radius: inherit;
-    background-color: currentColor;
+  .nav {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 82px;
+    left: 0;
+    background-color: var(--white-color);
+    opacity: 0;
+    padding: 100px 100px 100px 50px;
+    z-index: 2;
+    transform:translateX(-200px);
   }
 
-  .burger__line:nth-child(1) {
-    top: 10px;
+  .header.open .nav {
+    opacity: 90%;
+    transform: translateX(0);
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
   }
 
-  .burger__line:nth-child(2) {
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .nav__header-list {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
   }
 
-  .burger__line:nth-child(3) {
-    bottom: 10px;
+  .nav__header-list-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 
   .footer__right-icon {
@@ -351,7 +344,6 @@
   .list__link-info {
     font-size: small;
   }
-
 }
 
 @media (max-width: 650px) {
@@ -379,8 +371,12 @@
   }
 
   .list__item-services {
-    width: 69%;
-    padding-top: 20%;
+    width: 100%;
+    padding-top: 25%;
+  }
+
+  .list__txt-services {
+    font-size: 30px;
   }
 
   .list__descr-services {
@@ -425,15 +421,23 @@
     padding-left: 30%;
   }
 
+  .list__text-services {
+    display: none;
+  }
+
+  .list__form-select-city {
+    width: 70%;
+  }
+
+  .list__form-select-country {
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 550px) {
-  .list__descr-services {
-    padding: 2%;
-  }
-
   .list__footer-right {
-    padding-left: 99px;
+    padding-left: 50px;
   }
 
   .form__subtitle {
@@ -448,19 +452,34 @@
     margin-right: 5%;
   }
 
-  .burger {
-    right: 30%;
+  .list__txt-services {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .list__item-benefits {
-    width: 48%;
+    width: 100%;
   }
 
-  .list__item-hotels {
+  .list__text-benefits {
     width: 100%;
-    padding-top: 63%;
+  }
+
+  .benefits__btn-wrapper {
+    display: block;
+  }
+  
+  .benefits__btn-wrapper.\.benefits__btn-wrapper--hidden { 
+    display: none;
+  }
+
+  .list__item-benefits:nth-child(-n+6) {
+    display: none;
+  }
+
+  .list__item-benefits--visible.list__item-benefits {
+    display: block;
   }
 
   .list__icon-stars {
@@ -469,7 +488,7 @@
   }
 
   .footer__right-icon {
-    margin-right: -15%;
+    margin-right: -25%;
   }
 
   .form__container {
@@ -479,19 +498,32 @@
   .form__list {
     width: 100%;
   }
+
+  .hotels__btn-pack {
+    display: block;
+  }
+  
+  .hotels__btn-pack.\.hotels__btn-pack--hidden { 
+    display: none;
+  }
+
+  .list__item-hotels {
+    width: 100%;
+    padding-top: 63%;
+  }
+
+  .list__item-hotels:nth-child(-n+6) {
+    display: none;
+  }
+
+  .list__item-hotels--visible:not(:last-child) {
+    display: block;
+  }
 }
 
 @media (max-width: 390px) {
-  .burger {
-    right: 25%;
-  }
-
   .place__desc {
     padding: 15%;
-  }
-
-  .list__item-services {
-    width: 80%;
   }
 
   .list__txt-services {
@@ -500,6 +532,12 @@
 
   .list__footer-right {
     padding-left: 5%;
+    display: flex;
+  }
+
+  .footer__social-icon:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 5px;
   }
 
   .footer__copy {
@@ -507,10 +545,11 @@
   }
 
   .footer__right-icon {
-    height: 20%;
-    width: 30%;
-    right: 15%;
-    top: 80%;
+    margin-right: 0;
+    height: 30%;
+    width: 40%;
+    right: 14%;
+    top: 70%;
   }
 
   .footer__location {
@@ -519,10 +558,15 @@
 
   .footer__container {
     padding: 5%;
+    flex-direction: column;
   }
 
   .contacts__address {
-    padding-left: 1%;
+    padding-left: 10%;
+  }
+
+  .contacts__button {
+    padding: 10px;
   }
 
   .subtitle {
@@ -539,10 +583,6 @@
 }
 
 @media (max-width: 370px) {
-  .list__item-benefits {
-    width: 100%;
-  }
-
   .benefits__list {
     align-items: center;
   }
